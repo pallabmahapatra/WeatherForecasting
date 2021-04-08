@@ -1,0 +1,77 @@
+{
+    "version": {
+        "title": "WEBSMARTFORECAST",
+        "release": "v0.1",
+        "date":  "2020/06/25",
+        "environment": "RELEASE"
+    },
+    "locations": {
+        "Honolulu": {
+            "long": -117.8692, 
+			"lat": 21.3205, 
+            "name": "Honolulu Community College"
+        },
+        "Leeward": {
+            "long": -157.9838, 
+            "lat": 21.3927, 
+            "name": "Leeward Community College"
+        },
+        "Windward": {
+            "long": -157.8122, 
+            "lat": 21.4079, 
+            "name": "Windward Community College"
+        },
+        "Kapiolani": {
+            "long": -157.7994, 
+            "lat": 21.2710, 
+            "name": "Kapiolani Community College"
+        },
+        "Maui": {
+            "long": -156.4787, 
+            "lat": 20.8893, 
+            "name": "Maui College"
+        }
+    },
+    "mongodb": {
+        "servers": "**** server link to be added *** ",
+        "database": "websmartforecast_heco_operational",
+        "user": "websmartforecast-heco",
+        "password": "heco"
+    },
+    "zookeeper": {
+        "hosts": "**names to be added",
+        "path": "/locks"
+    },
+    "kafka": {
+        "servers": "** kafka link to be added **",
+        "timeout": 5000,
+        "topic":  "websmartforecast-heco-model-service"
+    },
+    "URL_FORMAT": "https://api.weather.gov/points/",
+    "operational_weather_table_name": "operational_weather_data",
+    "historical_weather_table_name": "historical_weather_data",
+    "postgres_raw_data_table_name": "raw_data",
+    "postgres_locations_table_name": "hawaii_university_locations",
+    "weather_actual": {
+        "zk_lock": "WEATHER_ACTUAL",
+        "log_path": "logs/weather_actual.log"
+    },
+    "weather_updated": {
+        "zk_lock": "WEATHER_UPDATED",
+        "log_path": "logs/weather_updated.log"
+    },
+    "load": {
+        "zk_lock": "LOAD",
+        "log_path": "logs/load.log",
+        "group_id": "heco_load"
+    },
+    "solar": {
+        "zk_lock": "SOLAR",
+        "log_path": "logs/solar.log",
+        "timer": 1800,
+        "group": "solar"
+    },
+    "debug_level": "DEBUG",
+	"Timer": "43200"
+
+}
